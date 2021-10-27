@@ -1,7 +1,7 @@
 # kloian-pre-commits
 This repository introduces Kloian [pre-commit](https://github.com/pre-commit/pre-commit) configuration. 
 
-## Why [pre-commit](https://pre-commit.com/)?
+## Why [pre-commit](https://pre-commit.com/)?
 
 Pre-commit is a framework for managing and maintaining multi-language pre-commit hooks.
 
@@ -24,7 +24,7 @@ Pre-commit is a framework for managing and maintaining multi-language pre-commit
 `pip install pre-commit`
 
 
-#### Check the installation
+#### Check the installation
 
 `pre-commit --version`
 
@@ -77,7 +77,7 @@ touch referenced.txt \
 ```
 ![](assets/broken_symlink_commit_output.png)
 
-## Possible Future Hooks
+## Possible Future Custom Hooks
 |Name|Explanation|
 |--|--|
 |detect-any-aws-credential|Checks for any AWS credentials in committed files whether it's in your `.aws/credentials` file or not. |
