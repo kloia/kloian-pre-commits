@@ -57,7 +57,7 @@ Pre-commit is a framework for managing and maintaining multi-language pre-commit
 | destroyed-symlinks | Detects broken symlinks | 
 | detect-aws-credentials | Detects _your_ AWS credentials on committed files if they're on your `.aws/credentials` file | 
 
-## Tests
+## Tests
 ### 1. try to commit a broken JSON file
 
 ```bash
