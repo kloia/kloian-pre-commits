@@ -34,14 +34,13 @@ Pre-commit is a framework for managing and maintaining multi-language pre-commit
 
 2. Run below script to get the kloianway pre-commit configuration.
     ```bash
-    # check if you are in the git root directory 
     if test -d .git; then 
         curl -Ls https://raw.githubusercontent.com/kloia/kloian-pre-commits/main/.pre-commit-config.yaml --output .pre-commit-config.yaml;
         pre-commit install --install-hooks --overwrite; 
-    else echo "No GIT repository found. Are you sure you are in the root .git directory?"; 
+    else echo "No GIT repository found. Are you sure you are in a git initialized root directory?"; 
     fi
     ```
-3. **[OPTIONAL]** Append pre-commit configuraton file to `.gitignore`
+3. **[OPTIONAL]** Append pre-commit configuraton file to `.gitignore`. Recommended if you are using kloian-pre-commit configuration for yourself.
     ```bash
     echo ".pre-commit-config.yaml" >> .gitignore
     ```
@@ -50,7 +49,7 @@ Pre-commit is a framework for managing and maintaining multi-language pre-commit
 | Name | Explanation | 
 |--|--| 
 | trailing-whitespace | Removes trailing whitespaces on committed files| 
-| check-executables-have-shebangs | Checks for `#!/bin/bash` in the first line of script shells| 
+| check-executables-have-shebangs | Checks for `#!/bin/bash` in the first line of shell scripts| 
 | check-json | Checks `.json` file syntax | 
 | check-yaml | Checks `.yaml` file syntax | 
 | check-symlinks | Detects empty symlinks | 
