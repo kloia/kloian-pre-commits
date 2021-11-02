@@ -76,6 +76,22 @@ touch referenced.txt \
 ```
 ![](assets/broken_symlink_commit_output.png)
 
+### 3. try to commit AWS Credentials found in your ~/.aws/credentials 
+
+```bash
+export AWS_CONFIG_LOCATION=$HOME/.aws/credentials; 
+echo "" >>  $AWS_CONFIG_LOCATION \
+    && echo "[fake]" >> $AWS_CONFIG_LOCATION \
+    && echo "aws_access_key_id = AKIAXXXXXXXXXXXXXXXX"  >> $AWS_CONFIG_LOCATION \
+    && echo "aws_secret_access_key =YYYYYYYYYYYYYY-DANGER-YYYYYYYYYYYYYYYYY" >> $AWS_CONFIG_LOCATION \
+    && echo "AKIAXXXXXXXXXXXXXXXX" >> dangerous_file.txt \
+    && echo "YYYYYYYYYYYYYY-DANGER-YYYYYYYYYYYYYYYYY" >> dangerous_file.txt \
+    && git add dangerous_file.txt \
+    && git commit -m "try to commit aws credentials"
+
+```
+![](assets/detect_aws_credentials.png)
+
 ## Possible Future Custom Hooks
 |Name|Explanation|
 |--|--|
